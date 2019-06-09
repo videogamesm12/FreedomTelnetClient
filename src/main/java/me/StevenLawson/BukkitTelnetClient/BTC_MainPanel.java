@@ -30,6 +30,7 @@ import javax.swing.Timer;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.text.*;
 import org.apache.commons.lang3.StringUtils;
+import videogamesm12.FreedomTelnetClientPlus.BTC_FavoriteButtonsMenu;
 
 public class BTC_MainPanel extends javax.swing.JFrame
 {
@@ -468,36 +469,36 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         splitPane = new javax.swing.JSplitPane();
         jPanel3 = new javax.swing.JPanel();
         mainOutputScoll = new javax.swing.JScrollPane();
         mainOutput = new javax.swing.JTextPane();
-        btnDisconnect = new javax.swing.JButton();
         btnSend = new javax.swing.JButton();
-        txtServer = new javax.swing.JComboBox<me.StevenLawson.BukkitTelnetClient.ServerEntry>();
-        chkAutoScroll = new javax.swing.JCheckBox();
+        txtServer = new javax.swing.JComboBox<>();
         txtCommand = new javax.swing.JTextField();
-        btnConnect = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnToggleConnect = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         tblPlayersScroll = new javax.swing.JScrollPane();
         tblPlayers = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         txtNumPlayers = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        chkIgnorePlayerCommands = new javax.swing.JCheckBox();
-        chkIgnoreServerCommands = new javax.swing.JCheckBox();
-        chkShowChatOnly = new javax.swing.JCheckBox();
-        chkIgnoreErrors = new javax.swing.JCheckBox();
-        jPanel4 = new javax.swing.JPanel();
-        favoriteButtonsPanelHolder = new javax.swing.JPanel();
-        favoriteButtonsPanelScroll = new javax.swing.JScrollPane();
-        favoriteButtonsPanel = new BTC_FavoriteButtonsPanel(favButtonList);
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        ClearOutputMenu = new javax.swing.JMenuItem();
+        ExitButton = new javax.swing.JMenuItem();
+        FavoriteButtonsMenu = new BTC_FavoriteButtonsMenu(favButtonList);
+        SettingsMenu = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        chkIgnorePlayerCommands = new javax.swing.JCheckBoxMenuItem();
+        chkIgnoreServerCommands = new javax.swing.JCheckBoxMenuItem();
+        chkShowChatOnly = new javax.swing.JCheckBoxMenuItem();
+        chkIgnoreErrors = new javax.swing.JCheckBoxMenuItem();
+        chkAutoScroll = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BukkitTelnetClient");
@@ -505,55 +506,38 @@ public class BTC_MainPanel extends javax.swing.JFrame
         splitPane.setResizeWeight(1.0);
 
         mainOutput.setEditable(false);
+        mainOutput.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         mainOutput.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        mainOutput.setCaretColor(new java.awt.Color(255, 255, 255));
         mainOutputScoll.setViewportView(mainOutput);
-
-        btnDisconnect.setText("Disconnect");
-        btnDisconnect.setEnabled(false);
-        btnDisconnect.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnDisconnectActionPerformed(evt);
-            }
-        });
 
         btnSend.setText("Send");
         btnSend.setEnabled(false);
-        btnSend.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendActionPerformed(evt);
             }
         });
 
         txtServer.setEditable(true);
 
-        chkAutoScroll.setSelected(true);
-        chkAutoScroll.setText("AutoScroll");
-
         txtCommand.setEnabled(false);
-        txtCommand.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        txtCommand.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCommandKeyPressed(evt);
-            }
-        });
-
-        btnConnect.setText("Connect");
-        btnConnect.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnConnectActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Command:");
 
         jLabel2.setText("Server:");
+
+        btnToggleConnect.setText("Connect");
+        btnToggleConnect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToggleConnectActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -567,40 +551,31 @@ public class BTC_MainPanel extends javax.swing.JFrame
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCommand)
-                            .addComponent(txtServer, 0, 431, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtServer, 0, 526, Short.MAX_VALUE)
+                            .addComponent(txtCommand))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnConnect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnDisconnect)
-                            .addComponent(chkAutoScroll))))
+                            .addComponent(btnToggleConnect, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                            .addComponent(btnSend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnConnect, btnDisconnect, btnSend, chkAutoScroll});
-
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainOutputScoll, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addComponent(mainOutputScoll, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(btnSend)
-                    .addComponent(chkAutoScroll))
+                    .addComponent(btnSend))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(btnConnect)
-                    .addComponent(btnDisconnect)
-                    .addComponent(txtServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnToggleConnect))
                 .addContainerGap())
         );
 
@@ -634,7 +609,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tblPlayersScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                .addComponent(tblPlayersScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -644,81 +619,66 @@ public class BTC_MainPanel extends javax.swing.JFrame
 
         jTabbedPane1.addTab("Player List", jPanel2);
 
+        splitPane.setRightComponent(jTabbedPane1);
+
+        jMenu3.setText("File");
+
+        ClearOutputMenu.setText("Clear Output");
+        ClearOutputMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearOutputMenuActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ClearOutputMenu);
+
+        ExitButton.setText("Quit");
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButtonActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ExitButton);
+
+        jMenuBar2.add(jMenu3);
+
+        FavoriteButtonsMenu.setLabel("Commands");
+        jMenuBar2.add(FavoriteButtonsMenu);
+        FavoriteButtonsMenu.getAccessibleContext().setAccessibleName("FavoriteButtonsMenu");
+
+        SettingsMenu.setText("Settings");
+
+        jMenu1.setText("Filters");
+
         chkIgnorePlayerCommands.setSelected(true);
         chkIgnorePlayerCommands.setText("Ignore \"[PLAYER_COMMAND]\" messages");
+        chkIgnorePlayerCommands.setToolTipText("");
+        jMenu1.add(chkIgnorePlayerCommands);
 
         chkIgnoreServerCommands.setSelected(true);
         chkIgnoreServerCommands.setText("Ignore \"issued server command\" messages");
+        jMenu1.add(chkIgnoreServerCommands);
 
         chkShowChatOnly.setText("Show chat only");
-        chkShowChatOnly.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        chkShowChatOnly.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkShowChatOnlyActionPerformed(evt);
             }
         });
+        jMenu1.add(chkShowChatOnly);
 
+        chkIgnoreErrors.setSelected(true);
         chkIgnoreErrors.setText("Ignore warnings and errors");
+        jMenu1.add(chkIgnoreErrors);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkIgnorePlayerCommands)
-                    .addComponent(chkIgnoreServerCommands)
-                    .addComponent(chkShowChatOnly)
-                    .addComponent(chkIgnoreErrors))
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chkIgnorePlayerCommands, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkIgnoreServerCommands, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkShowChatOnly, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkIgnoreErrors, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(323, Short.MAX_VALUE))
-        );
+        SettingsMenu.add(jMenu1);
 
-        jTabbedPane1.addTab("Filters", jPanel1);
+        chkAutoScroll.setSelected(true);
+        chkAutoScroll.setText("AutoScroll");
+        SettingsMenu.add(chkAutoScroll);
 
-        favoriteButtonsPanelHolder.setLayout(new java.awt.BorderLayout());
+        jMenuBar2.add(SettingsMenu);
 
-        favoriteButtonsPanelScroll.setBorder(null);
-
-        favoriteButtonsPanel.setLayout(null);
-        favoriteButtonsPanelScroll.setViewportView(favoriteButtonsPanel);
-
-        favoriteButtonsPanelHolder.add(favoriteButtonsPanelScroll, java.awt.BorderLayout.CENTER);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(favoriteButtonsPanelHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(favoriteButtonsPanelHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Commands", jPanel4);
-
-        splitPane.setRightComponent(jTabbedPane1);
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -753,24 +713,6 @@ public class BTC_MainPanel extends javax.swing.JFrame
         }
     }//GEN-LAST:event_txtCommandKeyPressed
 
-    private void btnConnectActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnConnectActionPerformed
-    {//GEN-HEADEREND:event_btnConnectActionPerformed
-        if (!btnConnect.isEnabled())
-        {
-            return;
-        }
-        saveServersAndTriggerConnect();
-    }//GEN-LAST:event_btnConnectActionPerformed
-
-    private void btnDisconnectActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnDisconnectActionPerformed
-    {//GEN-HEADEREND:event_btnDisconnectActionPerformed
-        if (!btnDisconnect.isEnabled())
-        {
-            return;
-        }
-        getConnectionManager().triggerDisconnect();
-    }//GEN-LAST:event_btnDisconnectActionPerformed
-
     private void btnSendActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSendActionPerformed
     {//GEN-HEADEREND:event_btnSendActionPerformed
         if (!btnSend.isEnabled())
@@ -781,32 +723,55 @@ public class BTC_MainPanel extends javax.swing.JFrame
         txtCommand.selectAll();
     }//GEN-LAST:event_btnSendActionPerformed
 
-    private void chkShowChatOnlyActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_chkShowChatOnlyActionPerformed
-    {//GEN-HEADEREND:event_chkShowChatOnlyActionPerformed
-        boolean enable = !chkShowChatOnly.isSelected();
-        chkIgnorePlayerCommands.setEnabled(enable);
-        chkIgnoreServerCommands.setEnabled(enable);
+    private void chkShowChatOnlyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkShowChatOnlyActionPerformed
+        if (chkShowChatOnly.isSelected() == true) {
+            chkIgnorePlayerCommands.setSelected(false);
+            chkIgnorePlayerCommands.setEnabled(false);
+            chkIgnoreServerCommands.setSelected(false);
+            chkIgnoreServerCommands.setEnabled(false);
+        } else {
+            chkIgnorePlayerCommands.setEnabled(true);
+            chkIgnoreServerCommands.setEnabled(true);
+        }
     }//GEN-LAST:event_chkShowChatOnlyActionPerformed
 
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void ClearOutputMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearOutputMenuActionPerformed
+        mainOutput.setText(null);
+    }//GEN-LAST:event_ClearOutputMenuActionPerformed
+
+    private void btnToggleConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToggleConnectActionPerformed
+        if (btnToggleConnect.getText().equalsIgnoreCase("connect")) {
+            saveServersAndTriggerConnect();
+            
+        } else {
+            getConnectionManager().triggerDisconnect();
+        }
+    }//GEN-LAST:event_btnToggleConnectActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConnect;
-    private javax.swing.JButton btnDisconnect;
+    private javax.swing.JMenuItem ClearOutputMenu;
+    private javax.swing.JMenuItem ExitButton;
+    private javax.swing.JMenu FavoriteButtonsMenu;
+    private javax.swing.JMenu SettingsMenu;
     private javax.swing.JButton btnSend;
-    private javax.swing.JCheckBox chkAutoScroll;
-    private javax.swing.JCheckBox chkIgnoreErrors;
-    private javax.swing.JCheckBox chkIgnorePlayerCommands;
-    private javax.swing.JCheckBox chkIgnoreServerCommands;
-    private javax.swing.JCheckBox chkShowChatOnly;
-    private javax.swing.JPanel favoriteButtonsPanel;
-    private javax.swing.JPanel favoriteButtonsPanelHolder;
-    private javax.swing.JScrollPane favoriteButtonsPanelScroll;
+    private javax.swing.JButton btnToggleConnect;
+    private javax.swing.JCheckBoxMenuItem chkAutoScroll;
+    private javax.swing.JCheckBoxMenuItem chkIgnoreErrors;
+    private javax.swing.JCheckBoxMenuItem chkIgnorePlayerCommands;
+    private javax.swing.JCheckBoxMenuItem chkIgnoreServerCommands;
+    private javax.swing.JCheckBoxMenuItem chkShowChatOnly;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextPane mainOutput;
     private javax.swing.JScrollPane mainOutputScoll;
@@ -818,19 +783,14 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JComboBox<me.StevenLawson.BukkitTelnetClient.ServerEntry> txtServer;
     // End of variables declaration//GEN-END:variables
 
-    public javax.swing.JButton getBtnConnect()
-    {
-        return btnConnect;
-    }
-
-    public javax.swing.JButton getBtnDisconnect()
-    {
-        return btnDisconnect;
-    }
-
     public javax.swing.JButton getBtnSend()
     {
         return btnSend;
+    }
+    
+    public javax.swing.JButton getBtnToggleConnect()
+    {
+        return btnToggleConnect;
     }
 
     public javax.swing.JTextPane getMainOutput()
@@ -848,27 +808,27 @@ public class BTC_MainPanel extends javax.swing.JFrame
         return txtServer;
     }
 
-    public JCheckBox getChkAutoScroll()
+    public JCheckBoxMenuItem getChkAutoScroll()
     {
         return chkAutoScroll;
     }
 
-    public JCheckBox getChkIgnorePlayerCommands()
+    public JCheckBoxMenuItem getChkIgnorePlayerCommands()
     {
         return chkIgnorePlayerCommands;
     }
 
-    public JCheckBox getChkIgnoreServerCommands()
+    public JCheckBoxMenuItem getChkIgnoreServerCommands()
     {
         return chkIgnoreServerCommands;
     }
 
-    public JCheckBox getChkShowChatOnly()
+    public JCheckBoxMenuItem getChkShowChatOnly()
     {
         return chkShowChatOnly;
     }
 
-    public JCheckBox getChkIgnoreErrors()
+    public JCheckBoxMenuItem getChkIgnoreErrors()
     {
         return chkIgnoreErrors;
     }

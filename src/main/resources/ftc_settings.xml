@@ -7,24 +7,44 @@
             <format>glist ban $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
-            <name>Toggle Mute</name>
+            <name>Ban with a reason</name>
+            <format>glist ban $TARGET_NAME $REASON</format>
+        </playerCommand>
+        <playerCommand>
+            <name>Mute</name>
             <format>mute $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
+            <name>Toggle Command Blocking</name>
+            <format>blockcmd $TARGET_NAME</format>
+        </playerCommand>
+        <playerCommand>
             <name>Kick</name>
-            <format>tempban $TARGET_NAME 10s Kicked</format>
+            <format>kick $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
-            <name>Tempban 5m + Reason</name>
-            <format>tempban $TARGET_NAME 5m $REASON</format>
+            <name>Kick with a reason</name>
+            <format>kick $TARGET_NAME $REASON</format>
         </playerCommand>
         <playerCommand>
-            <name>Tempban 5m</name>
+            <name>5 minute ban</name>
             <format>tempban $TARGET_NAME 5m</format>
+        </playerCommand>
+        <playerCommand>
+            <name>5 minute ban with a reason</name>
+            <format>tempban $TARGET_NAME 5m $REASON</format>
         </playerCommand>
         <playerCommand>
             <name>Smite</name>
             <format>smite $TARGET_NAME</format>
+        </playerCommand>
+        <playerCommand>
+            <name>Smite with a reason</name>
+            <format>smite $TARGET_NAME with a reason</format>
+        </playerCommand>
+        <playerCommand>
+            <name>Warn</name>
+            <format>warn $TARGET_NAME $REASON</format>
         </playerCommand>
         <playerCommand>
             <name>Op</name>
@@ -35,15 +55,15 @@
             <format>deop $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
-            <name>GTFO + Reason</name>
-            <format>gtfo $TARGET_NAME $REASON</format>
-        </playerCommand>
-        <playerCommand>
             <name>GTFO</name>
             <format>gtfo $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
-            <name>Toggle Freeze</name>
+            <name>GTFO with a reason</name>
+            <format>gtfo $TARGET_NAME $REASON</format>
+        </playerCommand>
+        <playerCommand>
+            <name>Freeze</name>
             <format>fr $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
@@ -67,6 +87,10 @@
             <format>survival $TARGET_NAME</format>
         </playerCommand>
         <playerCommand>
+            <name>Name History</name>
+            <format>namehistory $TARGET_NAME</format>
+        </playerCommand>
+        <playerCommand>
             <name>Seen Name</name>
             <format>seen $TARGET_NAME</format>
         </playerCommand>
@@ -81,80 +105,84 @@
     </playerCommands>
     <favoriteButtons>
         <favoriteButton>
-            <label>Op All</label>
+            <label>/opall</label>
             <command>opall</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Deop All</label>
+            <label>/deopall</label>
             <command>deopall</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Nick Clean</label>
+            <label>/nickclean</label>
             <command>nickclean</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Adminmode ON</label>
+            <label>/adminmode on</label>
             <command>adminmode on</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Adminmode OFF</label>
+            <label>/adminmode off</label>
             <command>adminmode off</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Cake</label>
+            <label>/cake</label>
             <command>cake</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Mob Purge</label>
-            <command>mp</command>
+            <label>/mobpurge</label>
+            <command>mobpurge</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Remove Drops</label>
-            <command>rd</command>
+            <label>/entitywipe</label>
+            <command>entitywipe</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Purge All</label>
+            <label>/purgeall</label>
             <command>purgeall</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Set Limit = 500</label>
+            <label>/setl</label>
             <command>setl</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Stop Server</label>
+            <label>/stop</label>
             <command>stop</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Water Placement</label>
+            <label>/toggle waterplace</label>
             <command>toggle waterplace</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Fire Placement</label>
+            <label>/toggle fireplace</label>
             <command>toggle fireplace</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Lava Placement</label>
+            <label>/toggle lavaplace</label>
             <command>toggle lavaplace</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Fluid Spread</label>
+            <label>/toggle fluidspread</label>
             <command>toggle fluidspread</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Lava Damage</label>
+            <label>/toggle lavadmg</label>
             <command>toggle lavadmg</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Fire Spread</label>
+            <label>/toggle firespread</label>
             <command>toggle firespread</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Lockdown</label>
+            <label>/toggle lockdown</label>
             <command>toggle lockdown</command>
         </favoriteButton>
         <favoriteButton>
-            <label>Toggle Explosives</label>
+            <label>/toggle explosives</label>
             <command>toggle explosives</command>
+        </favoriteButton>
+        <favoriteButton>
+            <label>/unloadchunks</label>
+            <command>unloadchunks</command>
         </favoriteButton>
     </favoriteButtons>
 </configuration>

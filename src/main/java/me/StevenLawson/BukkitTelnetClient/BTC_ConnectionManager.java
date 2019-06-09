@@ -47,10 +47,8 @@ public class BTC_ConnectionManager
     public void triggerConnect(final String hostname, final int port)
     {
         final BTC_MainPanel btc = BukkitTelnetClient.mainPanel;
-
-        btc.getBtnConnect().setEnabled(false);
+        btc.getBtnToggleConnect().setText("Disconnect");
         btc.getTxtServer().setEnabled(false);
-        btc.getBtnDisconnect().setEnabled(true);
 
         btc.writeToConsole(new BTC_ConsoleMessage("Connecting to " + hostname + ":" + port + "...", Color.RED));
 
@@ -107,9 +105,8 @@ public class BTC_ConnectionManager
     {
         final BTC_MainPanel btc = BukkitTelnetClient.mainPanel;
 
-        btc.getBtnConnect().setEnabled(true);
+        btc.getBtnToggleConnect().setText("Connect");
         btc.getTxtServer().setEnabled(true);
-        btc.getBtnDisconnect().setEnabled(false);
         btc.getBtnSend().setEnabled(false);
         btc.getTxtCommand().setEnabled(false);
 
@@ -256,16 +253,16 @@ public class BTC_ConnectionManager
         {
             if (loginName == null)
             {
-                title = String.format("FreedomTelnetClient - %s - %s:%d", BukkitTelnetClient.VERSION_STRING, hostname, port);
+                title = String.format("FreedomTelnetClient Plus - %s - %s:%d", BukkitTelnetClient.VERSION_STRING, hostname, port);
             }
             else
             {
-                title = String.format("FreedomTelnetClient - %s - %s@%s:%d", BukkitTelnetClient.VERSION_STRING, loginName, hostname, port);
+                title = String.format("FreedomTelnetClient Plus - %s - %s@%s:%d", BukkitTelnetClient.VERSION_STRING, loginName, hostname, port);
             }
         }
         else
         {
-            title = String.format("FreedomTelnetClient - %s - Disconnected", BukkitTelnetClient.VERSION_STRING);
+            title = String.format("FreedomTelnetClient Plus - %s - Disconnected", BukkitTelnetClient.VERSION_STRING);
         }
 
         mainPanel.setTitle(title);
