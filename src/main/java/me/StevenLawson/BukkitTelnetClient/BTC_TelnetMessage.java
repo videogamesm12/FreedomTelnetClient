@@ -72,7 +72,8 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
             return !isType(BTC_LogMessageType.CHAT_MESSAGE)
                     && !isType(BTC_LogMessageType.CSAY_MESSAGE)
                     && !isType(BTC_LogMessageType.SAY_MESSAGE)
-                    && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE);
+                    && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE)
+                    && !isType(BTC_LogMessageType.LEGACY_ADMINSAY_MESSAGE);
         }
 
         if (mainPanel.getChkIgnoreServerCommands().isSelected() && isType(BTC_LogMessageType.ISSUED_SERVER_COMMAND))
@@ -84,13 +85,19 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
         {
             return true;
         }
+        
+        if (mainPanel.getChkIgnoreAWE().isSelected() && isType(BTC_LogMessageType.ASYNC_WORLD_EDIT))
+        {
+            return true;
+        }
 
         if (mainPanel.getChkIgnoreErrors().isSelected())
         {
             if (!isType(BTC_LogMessageType.CHAT_MESSAGE)
                     && !isType(BTC_LogMessageType.CSAY_MESSAGE)
                     && !isType(BTC_LogMessageType.SAY_MESSAGE)
-                    && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE))
+                    && !isType(BTC_LogMessageType.ADMINSAY_MESSAGE)
+                    && !isType(BTC_LogMessageType.LEGACY_ADMINSAY_MESSAGE))
             {
                 return false;
             }
@@ -119,8 +126,10 @@ public class BTC_TelnetMessage extends BTC_ConsoleMessage
         CSAY_MESSAGE(PATTERN_PREFIX + "\\[CONSOLE\\]<", Color.BLUE),
         //
         ADMINSAY_MESSAGE(PATTERN_PREFIX + "\\[ADMIN\\] ", PURPLE),
+        LEGACY_ADMINSAY_MESSAGE(PATTERN_PREFIX + "\\[TotalFreedomMod\\] \\[ADMIN\\] ", PURPLE),
         //
         WORLD_EDIT(PATTERN_PREFIX + "WorldEdit: ", Color.RED),
+        ASYNC_WORLD_EDIT(PATTERN_PREFIX + "\\[AsyncWorldEdit] ", Color.RED),
         //
         PREPROCESS_COMMAND(PATTERN_PREFIX + "\\[PREPROCESS_COMMAND\\] ", DARK_GREEN),
         //

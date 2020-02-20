@@ -498,6 +498,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkIgnoreServerCommands = new javax.swing.JCheckBoxMenuItem();
         chkShowChatOnly = new javax.swing.JCheckBoxMenuItem();
         chkIgnoreErrors = new javax.swing.JCheckBoxMenuItem();
+        chkIgnoreAWE = new javax.swing.JCheckBoxMenuItem();
         chkAutoScroll = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -654,7 +655,6 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkIgnorePlayerCommands.setToolTipText("");
         jMenu1.add(chkIgnorePlayerCommands);
 
-        chkIgnoreServerCommands.setSelected(true);
         chkIgnoreServerCommands.setText("Ignore \"issued server command\" messages");
         jMenu1.add(chkIgnoreServerCommands);
 
@@ -669,6 +669,10 @@ public class BTC_MainPanel extends javax.swing.JFrame
         chkIgnoreErrors.setSelected(true);
         chkIgnoreErrors.setText("Ignore warnings and errors");
         jMenu1.add(chkIgnoreErrors);
+
+        chkIgnoreAWE.setSelected(true);
+        chkIgnoreAWE.setText("Ignore AsyncWorldEdit-related messages");
+        jMenu1.add(chkIgnoreAWE);
 
         SettingsMenu.add(jMenu1);
 
@@ -760,6 +764,7 @@ public class BTC_MainPanel extends javax.swing.JFrame
     private javax.swing.JButton btnSend;
     private javax.swing.JButton btnToggleConnect;
     private javax.swing.JCheckBoxMenuItem chkAutoScroll;
+    private javax.swing.JCheckBoxMenuItem chkIgnoreAWE;
     private javax.swing.JCheckBoxMenuItem chkIgnoreErrors;
     private javax.swing.JCheckBoxMenuItem chkIgnorePlayerCommands;
     private javax.swing.JCheckBoxMenuItem chkIgnoreServerCommands;
@@ -831,6 +836,11 @@ public class BTC_MainPanel extends javax.swing.JFrame
     public JCheckBoxMenuItem getChkIgnoreErrors()
     {
         return chkIgnoreErrors;
+    }
+    
+    public JCheckBoxMenuItem getChkIgnoreAWE()
+    {
+        return chkIgnoreAWE;
     }
 
     public List<PlayerInfo> getPlayerList()

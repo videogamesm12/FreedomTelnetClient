@@ -57,7 +57,6 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JCheckBoxMenuItem" name="chkIgnoreServerCommands">
                   <Properties>
-                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Ignore &quot;issued server command&quot; messages"/>
                   </Properties>
                 </MenuItem>
@@ -73,6 +72,12 @@
                   <Properties>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Ignore warnings and errors"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JCheckBoxMenuItem" name="chkIgnoreAWE">
+                  <Properties>
+                    <Property name="selected" type="boolean" value="true"/>
+                    <Property name="text" type="java.lang.String" value="Ignore AsyncWorldEdit-related messages"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>
